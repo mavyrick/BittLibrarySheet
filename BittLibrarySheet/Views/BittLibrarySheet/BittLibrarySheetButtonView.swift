@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LibrarySheetButtonView: View {
     
+    let title: String
     let buttonColor: Color
     let iconAssetName: String
     var action: () -> Void
@@ -25,16 +26,11 @@ struct LibrarySheetButtonView: View {
             .frame(width: 160, height: 96)
             .background(buttonColor)
             .cornerRadius(24)
-            Text("capture now")
-                .font(.custom("Anybody_Expanded-Regular", size: 16))
+            Text(title)
+                .font(.custom("Anybody Expanded", size: 16))
                 .foregroundColor(AppColors.textGray)
         }
         
     }
-    
-//    func action() {
-//        
-//        
-//    }
     
 }

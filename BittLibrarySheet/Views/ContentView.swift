@@ -14,12 +14,12 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color.black
-                            .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
             VStack {
                 Button(action: {
                     isSheetPresented = true
                 }) {
-                    Text("Show Sheet")
+                    Text("Show Bitt Library Sheet")
                         .font(.title)
                         .padding()
                         .background(Color.blue)
@@ -28,14 +28,14 @@ struct ContentView: View {
                 }
             }
         }
-        .edgesIgnoringSafeArea(.all)
         .sheet(isPresented: $isSheetPresented) {
-            BittLibrarySheetView()
+            ZStack {
+                BittLibrarySheetView()
+                    .presentationDetents([.height(500)])
+                    .presentationDragIndicator(.visible)
+                    .presentationBackground(.black.opacity(0.5))
+            }
         }
-            
+        
     }
-}
-
-#Preview {
-    ContentView()
 }
